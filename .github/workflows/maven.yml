@@ -19,9 +19,9 @@ jobs:
           java-version: '17'
 
       - name: Build with Maven
-        working-directory: app/Angular-10-Spring-Boot-CRUD-Full-Stack-App-master/springboot-backend
+        working-directory: Angular-10-Spring-Boot-CRUD-Full-Stack-App-master/springboot-backend
         run: mvn clean install
 
       - name: Run tests
-        working-directory: app/Angular-10-Spring-Boot-CRUD-Full-Stack-App-master/springboot-backend
+        working-directory: Angular-10-Spring-Boot-CRUD-Full-Stack-App-master/springboot-backend
         run: mvn test
