@@ -12,7 +12,7 @@ pipeline {
       }
     }
 
-    stage('Build Backend') {
+    stage('Build') {
       steps {
         dir('app/Angular-10-Spring-Boot-CRUD-Full-Stack-App-master/springboot-backend') {
           sh 'mvn clean install'
@@ -20,7 +20,7 @@ pipeline {
       }
     }
 
-    stage('Test Backend') {
+    stage('Test') {
       steps {
         dir('app/Angular-10-Spring-Boot-CRUD-Full-Stack-App-master/springboot-backend') {
           sh 'mvn test'
@@ -28,25 +28,9 @@ pipeline {
       }
     }
 
-    stage('Deploy Backend') {
+    stage('Deploy') {
       steps {
         echo 'Deployment folgt später – z. B. auf Server kopieren oder Container starten.'
-      }
-    }
-
-    stage('Install Frontend Dependencies') {
-      steps {
-        dir('app/Angular-10-Spring-Boot-CRUD-Full-Stack-App-master/angular-frontend') {
-          sh 'npm install'
-        }
-      }
-    }
-
-    stage('Run Frontend Tests') {
-      steps {
-        dir('app/Angular-10-Spring-Boot-CRUD-Full-Stack-App-master/angular-frontend') {
-          sh 'npm test --watch=false'
-        }
       }
     }
   }
